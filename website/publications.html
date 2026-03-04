@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Jiaoyang Ding - EdTech Researcher</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        stone: {
+                            50: '#fafaf9',
+                            100: '#f5f5f4',
+                            200: '#e7e5e4',
+                            800: '#292524',
+                            900: '#1c1917',
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(30px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fafaf9;
+            color: #1c1917;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        ::selection {
+            background-color: #1c1917;
+            color: #fafaf9;
+        }
+
+        .publication-card {
+            transition: all 0.3s ease;
+        }
+        .publication-card:hover {
+            transform: translateX(8px);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-stone-900 selection:text-stone-50 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 mix-blend-difference text-stone-100 px-6 py-6 md:px-12 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-xl font-medium tracking-tighter">JIAOYANG<span class="font-serif italic text-stone-400">.</span></a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium tracking-wide">
+                <a href="about.html" class="hover:text-stone-400 transition-colors">About</a>
+                <a href="research.html" class="hover:text-stone-400 transition-colors">Research</a>
+                <a href="publications.html" class="hover:text-stone-400 transition-colors">Publications</a>
+                <a href="contact.html" class="hover:text-stone-400 transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-2xl" id="menuBtn">
+                <i class="ph ph-list"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="fixed inset-0 bg-stone-900 z-40 hidden" id="mobileMenu">
+        <div class="flex flex-col items-center justify-center h-full space-y-8 text-stone-50">
+            <a href="index.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Home</a>
+            <a href="about.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">About</a>
+            <a href="research.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Research</a>
+            <a href="publications.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Publications</a>
+            <a href="contact.html" class="text-2xl font-serif hover:text-stone-400 transition-colors">Contact</a>
+            <button class="absolute top-6 right-6 text-3xl" id="closeMenu">
+                <i class="ph ph-x"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-stone-500 uppercase tracking-[0.2em] text-sm font-medium mb-6 animate-fade-in-up">Publications</p>
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight text-stone-900 mb-8 animate-fade-in-up">
+                Contributing to the <span class="italic text-stone-500">academic</span> discourse.
+            </h1>
+            <p class="text-lg text-stone-600 font-light max-w-2xl animate-fade-in-up">
+                A collection of peer-reviewed publications, conference proceedings, and academic contributions in educational technology.
+            </p>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 px-6 md:px-12 border-b border-stone-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 reveal">
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-serif text-stone-900 mb-2">15+</p>
+                    <p class="text-sm text-stone-500 uppercase tracking-widest">Publications</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-serif text-stone-900 mb-2">50+</p>
+                    <p class="text-sm text-stone-500 uppercase tracking-widest">Citations</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-serif text-stone-900 mb-2">8</p>
+                    <p class="text-sm text-stone-500 uppercase tracking-widest">Conferences</p>
+                </div>
+                <div class="text-center">
+                    <p class="text-4xl md:text-5xl font-serif text-stone-900 mb-2">3</p>
+                    <p class="text-sm text-stone-500 uppercase tracking-widest">Book Chapters</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journal Articles -->
+    <section class="py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-3xl text-stone-900 mb-12 reveal">Journal Articles</h2>
+            
+            <div class="space-y-8">
+                
+                <!-- Article 1 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">Generative AI as Cognitive Scaffolding in Immersive Learning Environments: A Systematic Review</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J., & Colleagues</p>
+                            <p class="text-stone-600 text-sm"><span class="font-medium">Computers & Education</span> (2024) — Vol. 198, pp. 104-118</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Peer Reviewed</span>
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">Virtual Reality in STEM Education: A Meta-Analysis of Learning Outcomes</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J., Wang, L., & Chen, M.</p>
+                            <p class="text-stone-600 text-sm"><span class="font-medium">British Journal of Educational Technology</span> (2024) — Vol. 55(3), pp. 845-862</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Peer Reviewed</span>
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">Designing Metaverse Learning Spaces: Pedagogical Considerations and Implementation Frameworks</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J.</p>
+                            <p class="text-stone-600 text-sm"><span class="font-medium">Educational Technology Research and Development</span> (2023) — Vol. 71(4), pp. 1523-1542</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Peer Reviewed</span>
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">Gamification and Academic Integrity: Balancing Engagement with Assessment Validity</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J., & Lee, S.</p>
+                            <p class="text-stone-600 text-sm"><span class="font-medium">Journal of Computer Assisted Learning</span> (2023) — Vol. 39(5), pp. 1478-1495</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Peer Reviewed</span>
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 5 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">Large Language Models in Education: Opportunities, Challenges, and Ethical Considerations</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J., Zhang, H., & Liu, Y.</p>
+                            <p class="text-stone-600 text-sm"><span class="font-medium">International Journal of Artificial Intelligence in Education</span> (2023) — Vol. 33(2), pp. 567-589</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Peer Reviewed</span>
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Conference Proceedings -->
+    <section class="py-16 px-6 md:px-12 bg-stone-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-3xl text-stone-900 mb-12 reveal">Conference Proceedings</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Conference 1 -->
+                <div class="bg-white p-8 rounded-2xl reveal">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-microphone-stage text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-stone-900 mb-1">ICCE 2024</h3>
+                            <p class="text-sm text-stone-500">International Conference on Computers in Education</p>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-stone-900 mb-2">Exploring the Integration of Generative AI in CAVE Systems for Immersive Learning</h4>
+                    <p class="text-stone-600 text-sm mb-4">Ding, J., & Colleagues</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Oral Presentation</span>
+                        <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Best Paper Award</span>
+                    </div>
+                </div>
+
+                <!-- Conference 2 -->
+                <div class="bg-white p-8 rounded-2xl reveal">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-microphone-stage text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-stone-900 mb-1">AERA 2024</h3>
+                            <p class="text-sm text-stone-500">American Educational Research Association Annual Meeting</p>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-stone-900 mb-2">Metaverse in Education: A Framework for Designing Virtual Learning Spaces</h4>
+                    <p class="text-stone-600 text-sm mb-4">Ding, J.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Poster Session</span>
+                    </div>
+                </div>
+
+                <!-- Conference 3 -->
+                <div class="bg-white p-8 rounded-2xl reveal">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-microphone-stage text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-stone-900 mb-1">IEEE VR 2023</h3>
+                            <p class="text-sm text-stone-500">IEEE Conference on Virtual Reality and 3D User Interfaces</p>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-stone-900 mb-2">LearningverseVR: A Virtual Reality Platform for Game-based Learning</h4>
+                    <p class="text-stone-600 text-sm mb-4">Ding, J., & Wong, K.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Demo Session</span>
+                    </div>
+                </div>
+
+                <!-- Conference 4 -->
+                <div class="bg-white p-8 rounded-2xl reveal">
+                    <div class="flex items-start gap-4 mb-4">
+                        <div class="w-12 h-12 bg-stone-900 rounded-xl flex items-center justify-center flex-shrink-0">
+                            <i class="ph ph-microphone-stage text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium text-stone-900 mb-1">ALT-C 2023</h3>
+                            <p class="text-sm text-stone-500">Association for Learning Technology Conference</p>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-stone-900 mb-2">Robotics in Primary Education: Developing Computational Thinking Skills</h4>
+                    <p class="text-stone-600 text-sm mb-4">Ding, J., & Lee, M.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Workshop</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Chapters -->
+    <section class="py-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-3xl text-stone-900 mb-12 reveal">Book Chapters</h2>
+            
+            <div class="space-y-8">
+                
+                <!-- Chapter 1 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">The Role of Artificial Intelligence in Shaping Future Learning Environments</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J.</p>
+                            <p class="text-stone-600 text-sm">In: <span class="font-medium">Handbook of Educational Technology</span> (2024). Springer.</p>
+                            <p class="text-stone-500 text-sm mt-2">Editors: Smith, J., & Johnson, K.</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="px-3 py-1 bg-stone-100 rounded-full text-xs text-stone-600">Invited</span>
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 2 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">Immersive Technologies in STEM Education: VR, AR, and Beyond</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J., & Chen, W.</p>
+                            <p class="text-stone-600 text-sm">In: <span class="font-medium">Advances in STEM Education</span> (2023). Routledge.</p>
+                            <p class="text-stone-500 text-sm mt-2">Editors: Williams, R., & Brown, T.</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chapter 3 -->
+                <div class="publication-card border-l-2 border-stone-300 pl-6 py-4 reveal">
+                    <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                        <div class="flex-1">
+                            <h3 class="font-medium text-stone-900 text-lg mb-2">Ethical Considerations in Educational AI: Privacy, Bias, and Equity</h3>
+                            <p class="text-stone-500 text-sm mb-3">Ding, J.</p>
+                            <p class="text-stone-600 text-sm">In: <span class="font-medium">Ethics in Educational Technology</span> (2023). Cambridge University Press.</p>
+                            <p class="text-stone-500 text-sm mt-2">Editors: Anderson, M., & Garcia, L.</p>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <a href="#" class="text-stone-900 hover:text-stone-500 transition-colors">
+                                <i class="ph ph-arrow-square-out text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter/Tags Section -->
+    <section class="py-16 px-6 md:px-12 bg-stone-100">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-serif text-3xl text-stone-900 mb-8 reveal">Research Keywords</h2>
+            <div class="flex flex-wrap gap-3 reveal">
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Virtual Reality</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Generative AI</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Metaverse</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Educational Technology</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Gamification</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">LLM</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Cognitive Scaffolding</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">STEM Education</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Immersive Learning</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">CAVE</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Robotics</a>
+                <a href="#" class="px-4 py-2 bg-white rounded-full text-sm text-stone-700 hover:bg-stone-900 hover:text-white transition-colors">Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Profiles -->
+    <section class="py-24 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 reveal">
+                <h2 class="font-serif text-3xl text-stone-900 mb-4">Academic Profiles</h2>
+                <p class="text-stone-600 max-w-2xl mx-auto">Connect with me on academic platforms to view my complete publication list and research metrics.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal">
+                <a href="https://orcid.org/0009-0004-6760-3102" target="_blank" class="bg-stone-100 p-8 rounded-2xl text-center hover:bg-stone-200 transition-colors group">
+                    <div class="w-16 h-16 bg-stone-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-identification-card text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-stone-900 mb-2">ORCID</h3>
+                    <p class="text-sm text-stone-500">0009-0004-6760-3102</p>
+                </a>
+                <a href="#" class="bg-stone-100 p-8 rounded-2xl text-center hover:bg-stone-200 transition-colors group">
+                    <div class="w-16 h-16 bg-stone-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-graduation-cap text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-stone-900 mb-2">Scopus</h3>
+                    <p class="text-sm text-stone-500">View Profile</p>
+                </a>
+                <a href="#" class="bg-stone-100 p-8 rounded-2xl text-center hover:bg-stone-200 transition-colors group">
+                    <div class="w-16 h-16 bg-stone-900 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                        <i class="ph ph-google-logo text-white text-2xl"></i>
+                    </div>
+                    <h3 class="font-medium text-stone-900 mb-2">Google Scholar</h3>
+                    <p class="text-sm text-stone-500">View Profile</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 md:px-12 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <a href="index.html" class="text-xl font-medium tracking-tighter">JIAOYANG<span class="font-serif italic text-stone-400">.</span></a>
+            <div class="flex gap-6">
+                <a href="https://orcid.org/0009-0004-6760-3102" target="_blank" class="text-stone-500 hover:text-stone-900 transition-colors text-sm font-medium">ORCID</a>
+                <a href="#" class="text-stone-500 hover:text-stone-900 transition-colors text-sm font-medium">Scopus</a>
+                <a href="#" class="text-stone-500 hover:text-stone-900 transition-colors"><i class="ph ph-linkedin-logo text-xl"></i></a>
+            </div>
+            <p class="text-stone-500 text-sm">© 2026 Jiaoyang Ding. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Scroll Reveal Animation
+            const revealElements = document.querySelectorAll('.reveal');
+            const revealOptions = {
+                threshold: 0.15,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, revealOptions);
+
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            // Mobile Menu
+            const menuBtn = document.getElementById('menuBtn');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            menuBtn?.addEventListener('click', () => {
+                mobileMenu.classList.remove('hidden');
+            });
+
+            closeMenu?.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+
+            // Dynamic Navbar
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-4');
+                    navbar.classList.remove('py-6');
+                } else {
+                    navbar.classList.add('py-6');
+                    navbar.classList.remove('py-4');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
